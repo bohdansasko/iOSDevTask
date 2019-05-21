@@ -75,13 +75,17 @@ class AlbumsService {
     func fetchImage(photo: Photo, completion: @escaping (ImageResult) -> Void) {
         guard let thumbnailUrl = photo.thumbnailUrl,
               let imageURL = URL(string: thumbnailUrl) else {
-                completion(.failure(ImageError.invalidateData))
+                OperationQueue.main.addOperation {
+                    completion(.failure(ImageError.invalidateData))
+                }
                 return
         }
         
         if let cachedImage = imageStore.image(forKey: String(photo.id!)) {
             print("Load image from cache")
-            completion(.success(cachedImage))
+            OperationQueue.main.addOperation {
+                completion(.success(cachedImage))
+            }
             return
         }
         
@@ -91,13 +95,19 @@ class AlbumsService {
                 switch dataResponse.result {
                 case .success(let data):
                     guard let image = UIImage(data: data) else {
-                        completion(.failure(ImageError.invalidateData))
+                        OperationQueue.main.addOperation {
+                            completion(.failure(ImageError.invalidateData))
+                        }
                         return
                     }
                     self.imageStore.setImage(image, forKey: String(photo.id!))
-                    completion(.success(image))
+                    OperationQueue.main.addOperation {
+                        completion(.success(image))
+                    }
                 case .failure(let error):
-                    completion(.failure(error))
+                    OperationQueue.main.addOperation {
+                        completion(.failure(error))
+                    }
                 }
         })
     }

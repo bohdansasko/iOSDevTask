@@ -15,6 +15,11 @@ class Photo: Codable {
     let url, thumbnailUrl: String?
 }
 
+extension Photo: Equatable {
+    static func ==(lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.id! == rhs.id!
+    }
+}
 
 class PhotoCategory {
     let albumId: Int? = nil

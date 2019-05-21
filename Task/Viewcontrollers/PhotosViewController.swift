@@ -26,6 +26,15 @@ class PhotosViewController: UIViewController {
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
         
+        updateDataSource()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        galleryCollectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    func updateDataSource() {
         albumsService.fetchAlbums { result in
             switch result {
             case .success(let albums): self.albums = albums
@@ -35,11 +44,6 @@ class PhotosViewController: UIViewController {
                 self.galleryCollectionView.reloadData()
             }
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        galleryCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -76,9 +80,16 @@ extension PhotosViewController: UICollectionViewDelegate {
         let photo = albums[indexPath.section].photos[indexPath.row]
         albumsService.fetchImage(photo: photo, completion: { result in
             if case let .success(image) = result {
-                // [FIXME]: here uncorrect cell cellection. better use photo albumud & photo id
-                // let cell = collectionView.cellForItem(at: IndexPath(row: photo.id!, section: photo.albumId!))
-                guard let photoCell = cell as? PhotoCollectionViewCell else {
+                guard
+                    let albumIdx = self.albums.lastIndex(where: { $0.id == photo.albumId! }),
+                    let row = self.albums[albumIdx].photos.index(of: photo) else {
+                        return
+                }
+                let photoIndexPath = IndexPath(row: row, section: albumIdx)
+                print("photoIndexPath = \(photoIndexPath)")
+                guard
+                    let cell = self.galleryCollectionView.cellForItem(at: indexPath),
+                    let photoCell = cell as? PhotoCollectionViewCell else {
                     print("can't convert cell to PhotoCollectionViewCell")
                     return
                 }

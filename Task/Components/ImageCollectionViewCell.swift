@@ -17,6 +17,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         galleryImage.layer.cornerRadius = 10
         galleryImage.layer.masksToBounds = true
+        
+        updateContent(with: nil, title: nil)
     }
     
     override func prepareForReuse() {
@@ -25,6 +27,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func updateContent(with image: UIImage?, title: String?) {
+        print(#function)
         if image == nil {
             activity.startAnimating()
         } else {
