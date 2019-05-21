@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos-->
+        <!--Albums-->
         <scene sceneID="fNg-hN-3GQ">
             <objects>
                 <viewController id="qJT-QH-ugc" customClass="PhotosViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dml-ae-zlP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WAa-dR-ayT">
                                     <size key="itemSize" width="152" height="152"/>
@@ -36,12 +36,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-th-G7i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="131.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="137"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-J1-Syr">
-                                                    <rect key="frame" x="8" y="131.5" width="136" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="8" y="137" width="136" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="12"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Odn-Yq-BBg">
@@ -99,16 +99,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ahg-oq-ca2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photos" image="icPhotos" id="qXV-w3-3k5"/>
+                    <navigationItem key="navigationItem" title="Albums" id="D1W-Lp-OmY"/>
                     <connections>
                         <outlet property="gallaryCollectionView" destination="Dml-ae-zlP" id="3Pb-u4-cRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o15-2p-2Pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1124" y="138.98050974512745"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Users-->
         <scene sceneID="wLP-na-UWi">
             <objects>
                 <viewController id="K7f-F9-vfu" customClass="UsersViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,15 +130,15 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iRS-Nu-SpI">
                                                     <rect key="frame" x="16" y="16" width="343" height="58.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F72-rX-KCV">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F72-rX-KCV">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="29.5"/>
-                                                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-ej-Wib">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-ej-Wib">
                                                             <rect key="frame" x="0.0" y="29.5" width="343" height="29"/>
-                                                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -169,7 +169,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3l6-gc-A7T"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ush-sZ-9Jd"/>
+                    <navigationItem key="navigationItem" title="Users" id="ush-sZ-9Jd"/>
                     <connections>
                         <outlet property="usersTable" destination="uWe-JV-e96" id="B14-Yk-e7k"/>
                     </connections>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1124" y="-526.6866566716642"/>
         </scene>
-        <!--Details View Controller-->
+        <!--User Details-->
         <scene sceneID="DQk-1W-H2w">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" hidesBottomBarWhenPushed="YES" id="sbo-Ii-dTJ" customClass="DetailsViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" title="User Details" hidesBottomBarWhenPushed="YES" id="sbo-Ii-dTJ" customClass="DetailsViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h84-gN-JWM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,7 +364,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5RN-LK-m3L" kind="relationship" relationship="viewControllers" id="9LV-AY-Rsv"/>
-                        <segue destination="qJT-QH-ugc" kind="relationship" relationship="viewControllers" id="LaB-Kt-EIN"/>
+                        <segue destination="dyf-Nm-4KF" kind="relationship" relationship="viewControllers" id="LaB-Kt-EIN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLe-HL-AFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,6 +389,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhR-Xu-VfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="-526.6866566716642"/>
+        </scene>
+        <!--Photos-->
+        <scene sceneID="OC9-eU-k0N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dyf-Nm-4KF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photos" image="icPhotos" id="qXV-w3-3k5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mpC-dL-RkM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qJT-QH-ugc" kind="relationship" relationship="rootViewController" id="Xa1-5y-WF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yVa-7G-0e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
