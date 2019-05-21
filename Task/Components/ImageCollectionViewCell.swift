@@ -8,8 +8,15 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var gallaryImage: UIImageView!
-    @IBOutlet weak var descreption: UILabel!
+    @IBOutlet weak var galleryImage: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        galleryImage.layer.cornerRadius = 10
+        galleryImage.layer.masksToBounds = true
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -17,7 +24,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
     
     func updateContent(with image: UIImage?, title: String?) {
-        gallaryImage.image = image
-        descreption.text = title
+        galleryImage.image = image
+        descriptionLabel.text = title
     }
 }

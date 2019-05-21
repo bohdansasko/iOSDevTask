@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--images-->
+        <!--Photos-->
         <scene sceneID="fNg-hN-3GQ">
             <objects>
                 <viewController id="qJT-QH-ugc" customClass="PhotosViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,8 +56,8 @@
                                             <constraint firstItem="FUY-J1-Syr" firstAttribute="top" secondItem="kKr-th-G7i" secondAttribute="bottom" id="yiw-9d-TzZ"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="descreption" destination="FUY-J1-Syr" id="v6i-Bt-emN"/>
-                                            <outlet property="gallaryImage" destination="kKr-th-G7i" id="k5S-7o-0rA"/>
+                                            <outlet property="descriptionLabel" destination="FUY-J1-Syr" id="oGB-St-vpI"/>
+                                            <outlet property="galleryImage" destination="kKr-th-G7i" id="k5S-7o-0rA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -66,7 +66,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-FB-cHI">
-                                            <rect key="frame" x="24" y="8" width="327" height="30"/>
+                                            <rect key="frame" x="24" y="8" width="552" height="30"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
@@ -93,7 +93,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ahg-oq-ca2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="images" id="qXV-w3-3k5"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="icPhotos" id="qXV-w3-3k5"/>
                     <connections>
                         <outlet property="gallaryCollectionView" destination="Dml-ae-zlP" id="3Pb-u4-cRS"/>
                     </connections>
@@ -114,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="91" id="VW7-I2-pcu" customClass="UserTableViewCell" customModule="Task" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="91" id="VW7-I2-pcu" customClass="UserTableViewCell" customModule="Task" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VW7-I2-pcu" id="6YC-kf-VtD">
@@ -354,6 +354,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="5RN-LK-m3L" kind="relationship" relationship="viewControllers" id="9LV-AY-Rsv"/>
@@ -364,11 +365,11 @@
             </objects>
             <point key="canvasLocation" x="-767" y="-194"/>
         </scene>
-        <!--users-->
+        <!--Users-->
         <scene sceneID="9Fh-et-zmZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5RN-LK-m3L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="users" id="U06-RT-erE"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="icUserGroups" id="U06-RT-erE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oea-IK-REU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -384,4 +385,8 @@
             <point key="canvasLocation" x="184.80000000000001" y="-526.6866566716642"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icPhotos" width="37.5" height="37.5"/>
+        <image name="icUserGroups" width="37.5" height="37.5"/>
+    </resources>
 </document>
