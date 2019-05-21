@@ -79,6 +79,12 @@ class AlbumsService {
                 return
         }
         
+        if let cachedImage = imageStore.image(forKey: String(photo.id!)) {
+            print("Load image from cache")
+            completion(.success(cachedImage))
+            return
+        }
+        
         BaseService.manager
             .request(imageURL)
             .responseData(completionHandler: { dataResponse in
@@ -88,6 +94,7 @@ class AlbumsService {
                         completion(.failure(ImageError.invalidateData))
                         return
                     }
+                    self.imageStore.setImage(image, forKey: String(photo.id!))
                     completion(.success(image))
                 case .failure(let error):
                     completion(.failure(error))

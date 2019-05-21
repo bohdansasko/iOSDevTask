@@ -28,14 +28,14 @@
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="zSx-fQ-sh1" customClass="ImageCollectionViewCell" customModule="Task" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="zSx-fQ-sh1" customClass="PhotoCollectionViewCell" customModule="Task" customModuleProvider="target">
                                         <rect key="frame" x="5" y="51" width="152" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-th-G7i">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-th-G7i">
                                                     <rect key="frame" x="0.0" y="0.0" width="152" height="131.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-J1-Syr">
@@ -44,18 +44,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Odn-Yq-BBg">
+                                                    <rect key="frame" x="66" y="66" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="Odn-Yq-BBg" firstAttribute="centerX" secondItem="zSx-fQ-sh1" secondAttribute="centerX" id="BuZ-L4-pM5"/>
                                             <constraint firstItem="kKr-th-G7i" firstAttribute="top" secondItem="zSx-fQ-sh1" secondAttribute="top" id="Luj-zV-Stg"/>
                                             <constraint firstAttribute="bottom" secondItem="FUY-J1-Syr" secondAttribute="bottom" id="RCR-Kt-4ph"/>
                                             <constraint firstAttribute="trailing" secondItem="FUY-J1-Syr" secondAttribute="trailing" constant="8" id="RXp-jd-GSs"/>
                                             <constraint firstAttribute="trailing" secondItem="kKr-th-G7i" secondAttribute="trailing" id="lEl-ZO-bi4"/>
                                             <constraint firstItem="FUY-J1-Syr" firstAttribute="leading" secondItem="zSx-fQ-sh1" secondAttribute="leading" constant="8" id="obL-Xj-tug"/>
                                             <constraint firstItem="kKr-th-G7i" firstAttribute="leading" secondItem="zSx-fQ-sh1" secondAttribute="leading" id="tRj-qj-NNb"/>
+                                            <constraint firstItem="Odn-Yq-BBg" firstAttribute="centerY" secondItem="zSx-fQ-sh1" secondAttribute="centerY" id="vWS-cy-Ype"/>
                                             <constraint firstItem="FUY-J1-Syr" firstAttribute="top" secondItem="kKr-th-G7i" secondAttribute="bottom" id="yiw-9d-TzZ"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activity" destination="Odn-Yq-BBg" id="Bbl-Y0-tbX"/>
                                             <outlet property="descriptionLabel" destination="FUY-J1-Syr" id="oGB-St-vpI"/>
                                             <outlet property="galleryImage" destination="kKr-th-G7i" id="k5S-7o-0rA"/>
                                         </connections>
@@ -66,7 +72,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-FB-cHI">
-                                            <rect key="frame" x="24" y="8" width="552" height="30"/>
+                                            <rect key="frame" x="24" y="8" width="327" height="30"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
@@ -114,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="91" id="VW7-I2-pcu" customClass="UserTableViewCell" customModule="Task" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="91" id="VW7-I2-pcu" customClass="UserTableViewCell" customModule="Task" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VW7-I2-pcu" id="6YC-kf-VtD">

@@ -31,14 +31,26 @@ class PhotosViewController: UIViewController {
             case .success(let albums): self.albums = albums
             case .failure: self.albums.removeAll()
             }
-            self.gallaryCollectionView.reloadData()
+            OperationQueue.main.addOperation {
+                self.gallaryCollectionView.reloadData()
+            }
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        gallaryCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
 extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ReusableIdentifiers.kHeaderView.rawValue, for: indexPath) as! GallarySectionCollectionReusableView
+        guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                           withReuseIdentifier: ReusableIdentifiers.kHeaderView.rawValue,
+                                                                           for: indexPath) as? GallarySectionCollectionReusableView
+        else {
+            return UICollectionReusableView(frame: CGRect.zero)
+        }
         reusableView.title = String("Album name <\(albums[indexPath.section].id)>")
         return reusableView
     }
@@ -60,20 +72,26 @@ extension PhotosViewController: UICollectionViewDataSource {
 
 extension PhotosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print(indexPath)
+        print(#function, indexPath)
         let photo = albums[indexPath.section].photos[indexPath.row]
         albumsService.fetchImage(photo: photo, completion: { result in
             if case let .success(image) = result {
                 // [FIXME]: here uncorrect cell cellection. better use photo albumud & photo id
-//                let cell = collectionView.cellForItem(at: IndexPath(row: photo.id!, section: photo.albumId!))
-                guard let imageCell = cell as? ImageCollectionViewCell else {
-                    print("can't convert cell to ImageCollectionViewCell")
+                // let cell = collectionView.cellForItem(at: IndexPath(row: photo.id!, section: photo.albumId!))
+                guard let photoCell = cell as? PhotoCollectionViewCell else {
+                    print("can't convert cell to PhotoCollectionViewCell")
                     return
                 }
-                imageCell.updateContent(with: image, title: photo.title)
+                photoCell.updateContent(with: image, title: photo.title)
             }
         })
     }
 }
 
-extension PhotosViewController: UICollectionViewDelegateFlowLayout {}
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let kMinSpaceBetweenCells: CGFloat = 10
+        let itemWidth = (min(collectionView.bounds.size.width, collectionView.bounds.size.height) - kMinSpaceBetweenCells * 2)/2.0
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+}
