@@ -10,11 +10,11 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     private enum ReusableIdentifiers: String {
-        case kHeaderView = "GallarySectionCollectionReusableView"
+        case kHeaderView = "GallerySectionCollectionReusableView"
         case kCell = "imageCell"
     }
     
-    @IBOutlet weak var gallaryCollectionView: UICollectionView!
+    @IBOutlet weak var galleryCollectionView: UICollectionView!
     
     private var albums: [Album] = []
     
@@ -23,8 +23,8 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gallaryCollectionView.delegate = self
-        gallaryCollectionView.dataSource = self
+        galleryCollectionView.delegate = self
+        galleryCollectionView.dataSource = self
         
         albumsService.fetchAlbums { result in
             switch result {
@@ -32,14 +32,14 @@ class PhotosViewController: UIViewController {
             case .failure: self.albums.removeAll()
             }
             OperationQueue.main.addOperation {
-                self.gallaryCollectionView.reloadData()
+                self.galleryCollectionView.reloadData()
             }
         }
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        gallaryCollectionView.collectionViewLayout.invalidateLayout()
+        galleryCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -47,7 +47,7 @@ extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                            withReuseIdentifier: ReusableIdentifiers.kHeaderView.rawValue,
-                                                                           for: indexPath) as? GallarySectionCollectionReusableView
+                                                                           for: indexPath) as? GallerySectionCollectionReusableView
         else {
             return UICollectionReusableView(frame: CGRect.zero)
         }

@@ -1,5 +1,5 @@
 //
-//  GallarySectionCollectionReusableView.swift
+//  GallerySectionCollectionReusableView.swift
 //  Task
 //
 //  Created by mhmdraziq on 5/21/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GallarySectionCollectionReusableView: UICollectionReusableView {
+class GallerySectionCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var sectionTitleLable: UILabel!
     
     var title: String? {
