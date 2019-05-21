@@ -19,7 +19,21 @@ class Photo: Codable {
 class PhotoCategory {
     let albumId: Int? = nil
     let albumTitle:String = ""
-    let imageURls:[String] = []
+    let imageURLs:[String] = []
 }
 
+// MARK - Album with photos
+struct Album {
+    let id: Int
+    let photos: [Photo]
+}
 
+extension Album: Hashable {
+    var hashValue: Int {
+        return id.hashValue
+    }
+    
+    static func == (lhs: Album, rhs: Album) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

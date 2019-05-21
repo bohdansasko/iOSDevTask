@@ -23,7 +23,7 @@
 		5A70002F2291C3B400EF1579 /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70002E2291C3B400EF1579 /* TaskUITests.swift */; };
 		5AFF3A802291C5FE00CDCB6F /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A7F2291C5FE00CDCB6F /* BaseService.swift */; };
 		5AFF3A822291C66D00CDCB6F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A812291C66D00CDCB6F /* UserService.swift */; };
-		5AFF3A842291C67C00CDCB6F /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A832291C67C00CDCB6F /* PhotosService.swift */; };
+		5AFF3A842291C67C00CDCB6F /* AlbumsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A832291C67C00CDCB6F /* AlbumsService.swift */; };
 		5AFF3A862291C80D00CDCB6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A852291C80D00CDCB6F /* User.swift */; };
 		5AFF3A882291C88A00CDCB6F /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A872291C88A00CDCB6F /* Photos.swift */; };
 		5AFF3A8A2291CE7900CDCB6F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A892291CE7900CDCB6F /* PhotosViewController.swift */; };
@@ -32,6 +32,7 @@
 		5AFF3A912291D15500CDCB6F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFF3A902291D15500CDCB6F /* UserTableViewCell.swift */; };
 		64088903DC1F3B33323062C2 /* Pods_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CD7495B7318BCB4D4D0BC /* Pods_Task.framework */; };
 		C7630A5B2293FF2300F89F2A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7630A5A2293FF2300F89F2A /* ImageCollectionViewCell.swift */; };
+		C7630A5F22940B4700F89F2A /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7630A5E22940B4700F89F2A /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,7 @@
 		5A7000302291C3B400EF1579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AFF3A7F2291C5FE00CDCB6F /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		5AFF3A812291C66D00CDCB6F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		5AFF3A832291C67C00CDCB6F /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		5AFF3A832291C67C00CDCB6F /* AlbumsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsService.swift; sourceTree = "<group>"; };
 		5AFF3A852291C80D00CDCB6F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AFF3A872291C88A00CDCB6F /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		5AFF3A892291CE7900CDCB6F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		B36CD7495B7318BCB4D4D0BC /* Pods_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC8B6F1A6C2C137B6A33B65 /* Pods-Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task.debug.xcconfig"; path = "Target Support Files/Pods-Task/Pods-Task.debug.xcconfig"; sourceTree = "<group>"; };
 		C7630A5A2293FF2300F89F2A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7630A5E22940B4700F89F2A /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		CAC2FD75EAE00524B4B19925 /* Pods-TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskTests/Pods-TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6734F8199B4D3C9FDBF70E8 /* Pods-TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTests.release.xcconfig"; path = "Target Support Files/Pods-TaskTests/Pods-TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,7 +219,8 @@
 			children = (
 				5AFF3A7F2291C5FE00CDCB6F /* BaseService.swift */,
 				5AFF3A812291C66D00CDCB6F /* UserService.swift */,
-				5AFF3A832291C67C00CDCB6F /* PhotosService.swift */,
+				5AFF3A832291C67C00CDCB6F /* AlbumsService.swift */,
+				C7630A5E22940B4700F89F2A /* ImageStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -513,12 +516,13 @@
 				5A6C8DE822935CCD0057778B /* GallarySectionCollectionReusableView.swift in Sources */,
 				5AFF3A822291C66D00CDCB6F /* UserService.swift in Sources */,
 				5AFF3A8A2291CE7900CDCB6F /* PhotosViewController.swift in Sources */,
+				C7630A5F22940B4700F89F2A /* ImageStore.swift in Sources */,
 				5AFF3A912291D15500CDCB6F /* UserTableViewCell.swift in Sources */,
 				5A7000112291C3AD00EF1579 /* ViewController.swift in Sources */,
 				5AFF3A862291C80D00CDCB6F /* User.swift in Sources */,
 				C7630A5B2293FF2300F89F2A /* ImageCollectionViewCell.swift in Sources */,
 				5A6C8DEE229373D20057778B /* Address.swift in Sources */,
-				5AFF3A842291C67C00CDCB6F /* PhotosService.swift in Sources */,
+				5AFF3A842291C67C00CDCB6F /* AlbumsService.swift in Sources */,
 				5A6C8DF1229376820057778B /* CompanyComponent.swift in Sources */,
 				5A70000F2291C3AD00EF1579 /* AppDelegate.swift in Sources */,
 				5AFF3A802291C5FE00CDCB6F /* BaseService.swift in Sources */,

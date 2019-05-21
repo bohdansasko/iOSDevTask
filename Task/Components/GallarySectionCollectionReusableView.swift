@@ -9,12 +9,11 @@
 import UIKit
 
 class GallarySectionCollectionReusableView: UICollectionReusableView {
+    @IBOutlet weak var sectionTitleLable: UILabel!
     
-    @IBOutlet weak var sectionTitleLable:UILabel!
-    
-    var sectionTitle:String! {
+    var title: String? {
         didSet {
-            sectionTitleLable.text = sectionTitle
+            sectionTitleLable.text = title
         }
     }
         
