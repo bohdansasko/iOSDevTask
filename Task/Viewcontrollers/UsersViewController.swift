@@ -8,36 +8,52 @@
 
 import UIKit
 
-class UsersViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
-    
-    var users:[User] = []
-    var userService:UserService = UserService()
+class UsersViewController: UIViewController {
     @IBOutlet weak var usersTable: UITableView!
+    
+    var users: [User] = []
+    var userService: UserService = UserService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         usersTable.delegate = self
         usersTable.dataSource = self
-     
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        userService.getUsers(){
-             users in
+        super.viewDidAppear(animated)
+        
+        userService.getUsers() { users in
             self.users = users
-            self.usersTable.reloadData()
+            OperationQueue.main.addOperation {
+                self.usersTable.reloadData()
+            }
         }
     }
+}
+
+extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"userCell") as? UserTableViewCell
-        cell!.name.text = users[indexPath.row].name ?? ""
-        cell!.email.text = users[indexPath.row].email ?? ""
-        return cell!
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") else {
+            return UITableViewCell()
+        }
+        return cell
     }
+}
+
+extension UsersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let userCell = cell as? UserTableViewCell else {
+            return
+        }
+        userCell.update(with: users[indexPath.row])
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailsViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
@@ -45,3 +61,4 @@ class UsersViewController: UIViewController , UITableViewDelegate , UITableViewD
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
+

@@ -9,8 +9,16 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
- 
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var name: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        update(with: nil)
+    }
+    
+    func update(with user: User?) {
+        name.text = user?.name
+        email.text = user?.email
+    }
 }

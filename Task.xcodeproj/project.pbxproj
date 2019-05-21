@@ -15,7 +15,6 @@
 		5A6C8DF1229376820057778B /* CompanyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C8DF0229376820057778B /* CompanyComponent.swift */; };
 		5A6C8DF3229376940057778B /* CompanyComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6C8DF2229376940057778B /* CompanyComponent.xib */; };
 		5A70000F2291C3AD00EF1579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70000E2291C3AD00EF1579 /* AppDelegate.swift */; };
-		5A7000112291C3AD00EF1579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7000102291C3AD00EF1579 /* ViewController.swift */; };
 		5A7000142291C3AD00EF1579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7000122291C3AD00EF1579 /* Main.storyboard */; };
 		5A7000162291C3B300EF1579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7000152291C3B300EF1579 /* Assets.xcassets */; };
 		5A7000192291C3B300EF1579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7000172291C3B300EF1579 /* LaunchScreen.storyboard */; };
@@ -33,6 +32,7 @@
 		64088903DC1F3B33323062C2 /* Pods_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CD7495B7318BCB4D4D0BC /* Pods_Task.framework */; };
 		C7630A5B2293FF2300F89F2A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7630A5A2293FF2300F89F2A /* ImageCollectionViewCell.swift */; };
 		C7630A5F22940B4700F89F2A /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7630A5E22940B4700F89F2A /* ImageStore.swift */; };
+		C7630A622294461D00F89F2A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7630A612294461D00F89F2A /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		5A6C8DF2229376940057778B /* CompanyComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyComponent.xib; sourceTree = "<group>"; };
 		5A70000B2291C3AD00EF1579 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A70000E2291C3AD00EF1579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A7000102291C3AD00EF1579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A7000132291C3AD00EF1579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A7000152291C3B300EF1579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7000182291C3B300EF1579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		BBC8B6F1A6C2C137B6A33B65 /* Pods-Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task.debug.xcconfig"; path = "Target Support Files/Pods-Task/Pods-Task.debug.xcconfig"; sourceTree = "<group>"; };
 		C7630A5A2293FF2300F89F2A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7630A5E22940B4700F89F2A /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		C7630A612294461D00F89F2A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		CAC2FD75EAE00524B4B19925 /* Pods-TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskTests/Pods-TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6734F8199B4D3C9FDBF70E8 /* Pods-TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTests.release.xcconfig"; path = "Target Support Files/Pods-TaskTests/Pods-TaskTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,14 +164,13 @@
 		5A70000D2291C3AD00EF1579 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				5A70000E2291C3AD00EF1579 /* AppDelegate.swift */,
 				5AFF3A8F2291D13300CDCB6F /* Components */,
-				5A7000412291C44700EF1579 /* View */,
-				5A7000402291C43400EF1579 /* AppDelegate */,
-				5A70003F2291C42C00EF1579 /* Resources */,
+				5A7000412291C44700EF1579 /* Storyboards */,
 				5A70003E2291C42500EF1579 /* Services */,
 				5A70003D2291C41C00EF1579 /* Viewcontrollers */,
 				5A70003C2291C3C700EF1579 /* Models */,
-				5A70001A2291C3B300EF1579 /* Info.plist */,
+				C7630A602294459F00F89F2A /* Resources */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -199,6 +198,7 @@
 			children = (
 				5AFF3A852291C80D00CDCB6F /* User.swift */,
 				5AFF3A872291C88A00CDCB6F /* Photos.swift */,
+				C7630A612294461D00F89F2A /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +206,6 @@
 		5A70003D2291C41C00EF1579 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				5A7000102291C3AD00EF1579 /* ViewController.swift */,
 				5AFF3A892291CE7900CDCB6F /* PhotosViewController.swift */,
 				5AFF3A8B2291CEA700CDCB6F /* UsersViewController.swift */,
 				5AFF3A8D2291CFCA00CDCB6F /* DetailsViewController.swift */,
@@ -225,29 +224,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		5A70003F2291C42C00EF1579 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5A7000152291C3B300EF1579 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		5A7000402291C43400EF1579 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				5A70000E2291C3AD00EF1579 /* AppDelegate.swift */,
-			);
-			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		5A7000412291C44700EF1579 /* View */ = {
+		5A7000412291C44700EF1579 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				5A7000122291C3AD00EF1579 /* Main.storyboard */,
 				5A7000172291C3B300EF1579 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		5AFF3A8F2291D13300CDCB6F /* Components */ = {
@@ -270,6 +253,15 @@
 				71B1675666E7031C993C24A5 /* Pods_TaskUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7630A602294459F00F89F2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A7000152291C3B300EF1579 /* Assets.xcassets */,
+				5A70001A2291C3B300EF1579 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E80B464CF45ACD9A78078B34 /* Pods */ = {
@@ -518,9 +510,9 @@
 				5AFF3A8A2291CE7900CDCB6F /* PhotosViewController.swift in Sources */,
 				C7630A5F22940B4700F89F2A /* ImageStore.swift in Sources */,
 				5AFF3A912291D15500CDCB6F /* UserTableViewCell.swift in Sources */,
-				5A7000112291C3AD00EF1579 /* ViewController.swift in Sources */,
 				5AFF3A862291C80D00CDCB6F /* User.swift in Sources */,
 				C7630A5B2293FF2300F89F2A /* ImageCollectionViewCell.swift in Sources */,
+				C7630A622294461D00F89F2A /* Album.swift in Sources */,
 				5A6C8DEE229373D20057778B /* Address.swift in Sources */,
 				5AFF3A842291C67C00CDCB6F /* AlbumsService.swift in Sources */,
 				5A6C8DF1229376820057778B /* CompanyComponent.swift in Sources */,
@@ -706,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SKVU2N8R3;
-				INFOPLIST_FILE = Task/Info.plist;
+				INFOPLIST_FILE = Task/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -725,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SKVU2N8R3;
-				INFOPLIST_FILE = Task/Info.plist;
+				INFOPLIST_FILE = Task/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

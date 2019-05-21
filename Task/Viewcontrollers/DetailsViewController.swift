@@ -10,7 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var userObj:User!
+    var userObj: User!
     
     @IBOutlet weak var companyHolderView: UIView!
     @IBOutlet weak var addressHolderView: UIView!
@@ -23,20 +23,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var id: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if( userObj != nil ) {
+        
+        if (userObj != nil ) {
             fillDetails()
             settingUPComponents()
-        }else{
-            
         }
+        
         applyCardView(myView:companyHolderView)
         applyCardView(myView:addressHolderView)
-
-
-        
     }
     
     func fillDetails(){
@@ -47,6 +43,7 @@ class DetailsViewController: UIViewController {
         name.text = userObj.name
         id.text = String(userObj.id!)
     }
+    
     func settingUPComponents(){
         
         //setting up address view
@@ -61,6 +58,7 @@ class DetailsViewController: UIViewController {
         CompanyView?.Init(comp: userObj!.company!,view: companyHolderView)
         
     }
+    
     func applyCardView(myView:UIView){
         myView.layer.shadowColor = UIColor.gray.cgColor
         myView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)

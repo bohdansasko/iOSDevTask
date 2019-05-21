@@ -15,6 +15,7 @@ class UserService {
     init () {
         fullURL = BaseService.baseURL+serviceURL;
     }
+    
     func getUsers( completion: @escaping ([User]) -> ()) {
         BaseService.manager.request(self.fullURL  , method: .get, parameters: nil).validate().responseJSON { response in
             

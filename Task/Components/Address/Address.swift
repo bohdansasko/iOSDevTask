@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-class AddressComponent:UIView {
-    
+
+class AddressComponent: UIView {
     @IBOutlet weak var street: UILabel!
     @IBOutlet weak var suite: UILabel!
     @IBOutlet weak var city: UILabel!
@@ -17,9 +17,9 @@ class AddressComponent:UIView {
     @IBOutlet weak var lat: UILabel!
     @IBOutlet weak var lng: UILabel!
     
-    var AddressObj:Address!
+    var AddressObj: Address!
     
-    func Init(add:Address,view:UIView){
+    func Init(add: Address,view: UIView){
         self.street.text = add.street
         self.suite.text = add.suite
         self.city.text = add.city
@@ -27,6 +27,7 @@ class AddressComponent:UIView {
         self.lat.text = add.geo?.lat
         self.lng.text = add.geo?.lng
         self.bounds = view.bounds
+        
         view.addSubview(self)
     }
     
